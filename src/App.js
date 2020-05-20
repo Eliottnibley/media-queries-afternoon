@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Menu from './components/Menu'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor () {
+    super() 
+    this.state ={
+      isMenuOpen: false,
+      menuOptions: ['SERVISES', 'PORTFOLIO', 'ABOUT', 'TEAM', 'CONTACT']
+    }
+
+    this.toggleMenu = this.toggleMenu.bind(this)
+  }
+
+  toggleMenu () {
+    this.setState({isMenuOpen: !this.state.isMenuOpen})
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <div className='intro-background'>
+          <div className='image-fade'>
+            <header>
+              <div className='header-content'>
+                <div className='title'>Start Bootstrap</div>
+                <div className='menu'>
+                <Menu menuOptions={this.state.menuOptions}/>
+                </div>
+              </div>
+              <div className='mobile-menu'>
+                <Menu menuOptions={this.state.menuOptions}/>
+              </div>
+            </header>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
 
 export default App;
