@@ -193,6 +193,9 @@ header {
 
   .meet-message {
     width: 775px;
+    height: 200px;
+    overflow-wrap: break-word;
+    text-align: center;
   }
 }
 
@@ -200,10 +203,40 @@ header {
   .header-content {
     width: 575px;
   }
+
+  .intro-background {
+    height: 460px;
+  }
+
+  .welcome-message {
+    font-size: 25px;
+    top: 120px;
+  }
+
+  .meet-message {
+    width: 500px;
+    font-size: 55px;
+    top: 80px;
+  }
+
+  .more-button {
+    top: 80px;
+    width: 200px;
+    height: 60px;
+    font-size: 17px;
+  }
 }
 
 @media (max-width: 575px) {
   .header-content {
     width: 100vw;
+  }
+
+  .menu {
+    width: 50px;
+  }
+
+  .meet-message {
+    width: 80vw;
   }
 }
